@@ -1,0 +1,173 @@
+Ex1
+
+Q1
+OK
+
+Q2
+Constructeurs : Tv() et Tv(String brand)
+Méthodes : 8
+
+Q3
+1.
+on = false;
+brand = "unknown";
+channel = 5;
+soundVolume = 3;
+maxSound = 10;
+
+2.
+5
+
+3.
+on = true;
+La télévision est allumée
+
+on = true;
+brand = "unknown";
+channel = 5;
+soundVolume = 3;
+maxSound = 10;
+
+4.
+Le son de la télévision augmente
+
+on = true;
+brand = "unknown";
+channel = 5;
+soundVolume = 4;
+maxSound = 10;
+
+5.
+Rien ne se passe
+
+
+Ex2
+
+Q1
+Un nouveau fichier Tv.class s'est créé
+
+Q2
+Le fichier est en bytecode, l'éditeur ne parvient pas à le lire
+
+Q3
+1.
+OK
+
+2.
+Une erreur de compilation apparaît
+
+3.
+L'erreur se situe à la ligne 50
+un ";" n'est pas placé
+
+4.
+java: cannot find symbol
+  symbol:   variable True
+  location: class tv.src.Tv
+
+5.
+Rien, le fichier a été créé correctement
+
+Q4
+1.
+OK
+
+2.
+OK
+
+3.
+Un nouveau dossier a été créé
+
+4.
+Le dossier contient le .class
+Le contenu du dossier "src" est inchangé
+
+
+Ex3
+
+Q1
+OK
+
+Q2
+OK
+
+Q3
+OK
+
+
+Ex4
+
+Q1
+OK
+
+Q2
+Le fichier Tv.java a également été compilé
+
+Q3
+OK
+
+
+Ex5
+
+Q1
+1.
+Type : Author, attribut : author
+Type : String, attribut : title
+Type : int, attribut : publicationYear
+
+2.
+Book[]
+
+3.
+addBook(Book book)
+displayBooks()
+getNbBooks()
+getBook()
+
+Q2
+OK
+
+Q3
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
