@@ -25,7 +25,7 @@ public class Tv {
       this.on = false;
       this.brand = "unknown"; //
       this.channel = 5; // les valeurs numériques devraient être
-      this.soundVolume = 3; // définies dans des constantes
+      this.soundVolume = 7; // définies dans des constantes
       this.maxSound = 10; //
    }
 
@@ -39,7 +39,7 @@ public class Tv {
       this.on = false;
       this.brand = brand; //
       this.channel = 5; // les valeurs numériques devraient être
-      this.soundVolume = 3; // définies dans des constantes
+      this.soundVolume = 7; // définies dans des constantes
       this.maxSound = 10; //
    }
 

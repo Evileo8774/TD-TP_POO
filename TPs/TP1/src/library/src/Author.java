@@ -10,7 +10,7 @@ public class Author {
     * 
     * @param lastname  author's lastname
     * @param firstname author's firstname
-    * @param birthYear author's birth year
+    * @param birthyear author's birth year
     */
    public Author(String lastname, String firstname, int birthYear) {
       this.lastname = lastname;
@@ -40,4 +40,22 @@ public class Author {
       return this.firstname + " " + this.lastname + " born in " + this.birthYear;
    }
 
+   /**
+    * get author name as a String
+    *
+    * @return name of the author
+    */
+
+   public String getFullName(){
+      return this.firstname+" "+this.lastname;
+   }
+
+
+   public String getFirstname() {
+      return firstname;
+   }
+
+   public int getBirthYear() {
+      return birthYear;
+   }
 }
