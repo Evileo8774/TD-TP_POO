@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TD-TP_POO.iml" filepath="$PROJECT_DIR$/.idea/TD-TP_POO.iml" />
       <module fileurl="file://$PROJECT_DIR$/TDs/TD1/TD1.iml" filepath="$PROJECT_DIR$/TDs/TD1/TD1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TPs/TP1/TP1.iml" filepath="$PROJECT_DIR$/TPs/TP1/TP1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TPs/tp1/TP1.iml" filepath="$PROJECT_DIR$/TPs/tp1/TP1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TPs/tp2/light/light.iml" filepath="$PROJECT_DIR$/TPs/tp2/light/light.iml" />
     </modules>
   </component>
 </project>

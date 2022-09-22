@@ -1,0 +1,113 @@
+Ex1
+
+Q1
+OK
+
+Q2
+un nouveau dossier "docs" est créé, il contient les fichiers de la documentation.
+
+Q3
+OK
+
+Q4
+OK
+
+Ex2
+
+Q1
+OK
+
+Q2
+OK
+
+Q3
+leoo@penguin:~/poo_tp/tp2/tv$ java -classpath classes TvMain2 timoleon
+tv timoleon is off, channel : 5 - sound volume : 3
+--------------------------
+tv timoleon is on, channel : 7 - sound volume : 4
+
+
+Q4
+Une erreur est créée
+non, car on sait juste qu'on essaie d'accéder à l'index 0 d'un tableau vide
+
+Q5
+le code fonctionne et retourne une phrase
+La différence dans le 3 est qu'on ajoute une condition qui vérifie si on a qqch dans "args", si on en a pas, il en ajoute un
+
+Q6
+OK
+OK
+
+Ex4
+
+Q1
+OK
+
+Q2
+OK
+
+
+Ex5
+
+Q1
+1.
+getWatt() : int
+getLumen() : int
+getColor() : String
+turnOn() : void
+turnOff() : void
+isOn() : void
+
+2.
+watts : int
+lumens : int
+color : String
+state : boolean
+
+3.
+LightBulb(watts int, lumens int, color int)
+
+Q2
+Ok
+
+Q3
+OK
+
+Q4
+OK
+
+Q5
+Problème de java, la javadoc ne se génère pas
+
+Q6
+Ok
+
+Q7
+OK
+
+
+Ex6
+
+Q1
+Ok
+
+Q2
+OK
+
+Q3
+OK
+
+Ex7
+
+Q1
+OK
+
+Q2
+Problème de java, la javadoc ne se génère pas
+
+Q3
+OK
+
+Q4
+OK
