@@ -44,8 +44,8 @@ public class BikeStation {
     */
    public int getNumberOfBikes() {
       int tmp = 0;
-      for(Bike b : bikes){
-         if(b != null) tmp++;
+      for(int i = 0; i < bikes.length; i++){
+         if(bikes[i] != null) tmp++;
       }
       return tmp;
    }
@@ -73,9 +73,12 @@ public class BikeStation {
     */
    public boolean dropBike(Bike bike) {
       int slot = firstFreeSlot();
-      bikes[slot] = bike;
-      if (slot != -1) return true;
-      else return false;
+      if(slot == -1){
+         return false;
+      } else {
+         bikes[slot] = bike;
+         return true;
+      }
    }
 
    /**
@@ -86,12 +89,12 @@ public class BikeStation {
     * @return the bike taken
     */
    public Bike takeBike(int i) throws BikeNotAvailableException {
-      if(bikes[i] != null){
+      if( i < 0 || i >= bikes.length || bikes[i] == null){
+         throw new BikeNotAvailableException("Il n'y a pas de vélo à cet emplacement");
+      } else {
          Bike tmp = bikes[i];
          bikes[i] = null;
          return tmp;
-      } else {
-         throw new BikeNotAvailableException("Il n'y a pas de vélo à cet emplacement");
       }
    }
 
