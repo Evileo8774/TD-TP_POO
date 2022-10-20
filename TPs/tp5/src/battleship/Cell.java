@@ -39,6 +39,7 @@ public class Cell {
      * @return the result of the shot
      */
     public Answer shot(){
+        shot = true;
         if(hasBeenShot() || ship == null){
             return Answer.MISS;
         } else {

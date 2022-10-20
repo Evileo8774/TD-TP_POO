@@ -2,6 +2,8 @@ package battleship;
 
 import battleship.util.Position;
 
+import java.sql.SQLOutput;
+
 public class Sea {
 
     private Cell[][] sea;
@@ -41,6 +43,10 @@ public class Sea {
         return sea[p.getY()][p.getX()].shot();
     }
 
+
+    /**
+     * @return remaining life points of the defender
+     */
     public int getRemainingLifePoints(){
         int remainingLP = 0;
         for(int y = 0; y < sea.length; y++){
@@ -53,4 +59,29 @@ public class Sea {
 
         return remainingLP;
     }
+
+    /** display the game board line by line and cell by cell, on standard output,
+     * the display is different for the defender or the attacker, according to parameter
+     * @param defender true iff display is for defender, false if for opponent
+     */
+    public void display(boolean defender) {
+        char[] lettres = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'};
+
+        if(defender == true) System.out.println("Defender");
+        else System.out.println("Attacker");
+
+        System.out.print("   ");
+        for(int y = 0; y < sea.length; y++){
+            System.out.print(" "+(y+1)+" ");
+        }
+
+        for(int y = 0; y < sea.length; y++){
+            System.out.print("\n "+lettres[y]+" ");
+            for(int x = 0; x < sea[y].length; x++){
+                System.out.print(" "+(sea[y][x].toCharacter(defender))+" ");
+            }
+        }
+        System.out.println("\n");
+    }
+
 }
