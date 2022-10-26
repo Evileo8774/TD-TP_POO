@@ -14,6 +14,10 @@ public class Game {
         this.sea = sea;
     }
 
+
+    /**
+     * loops until all enemy ships are destroyed
+     */
     public void play(){
         while(sea.getRemainingLifePoints() != 0){
             sea.display(false);
@@ -24,6 +28,9 @@ public class Game {
         System.out.println("Bravo !");
     }
 
+    /** allows the user to input a position
+     * @return a position
+     */
     private Position inputPosition(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Entrez des coordonnées de tir(ex: k7)");
@@ -32,6 +39,11 @@ public class Game {
         return p;
     }
 
+
+    /** converts the String into a Positon object
+     * @param coord of the cell the player wants to shoot
+     * @return the position of the cell
+     */
     private Position toPosition(String coord){
         char[] lettres = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'};
         int y = 0;
@@ -43,6 +55,10 @@ public class Game {
         return new Position(x, y);
     }
 
+
+    /**
+     * @return sea object
+     */
     public Sea getSea(){
         return this.sea;
     }

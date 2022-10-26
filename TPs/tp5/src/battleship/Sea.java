@@ -27,8 +27,49 @@ public class Sea {
      * @param s ship to add
      * @param p position in the sea
      */
-    public void addShip(Ship s, Position p){
+    public void addShip(Ship s, Position p) throws IllegalStateException{
+        int shipLength = s.getLifePoints();
+        int lengthCount = 0;
+        int row = p.getY();
+        int col = p.getX();
+
+        int detectedShipPos = -1;
+
         sea[p.getY()][p.getX()].setShip(s);
+
+        for(int y = 0; y < this.sea.length; y++){
+            System.out.println(lengthCount);
+            //j'utilise getShip() == s car je veux vérifier qu'il s'agit bien du même objet
+            if(sea[y][col] != null && sea[y][col].getShip() == s && detectedShipPos == -1){
+                detectedShipPos = y;
+                lengthCount++;
+            } else if(sea[y][col] != null && sea[y][col].getShip() == s){
+                if(detectedShipPos == y-1 && lengthCount < shipLength){
+                    detectedShipPos = y;
+                    lengthCount++;
+                } else {
+                    throw new IllegalStateException();
+                }
+            }
+        }
+
+        if(lengthCount == 1){
+            detectedShipPos = -1;
+            lengthCount = 0;
+           for(int x = 0; x < this.sea[p.getY()].length; x++){
+               if(sea[row][x] != null && sea[row][x].getShip() == s && detectedShipPos == -1){
+                   detectedShipPos = x;
+                   lengthCount++;
+               } else if(sea[row][x] != null && sea[row][x].getShip() == s){
+                   if(detectedShipPos == x-1 && lengthCount < shipLength){
+                       detectedShipPos = x;
+                       lengthCount++;
+                   } else {
+                       throw new IllegalStateException();
+                   }
+               }
+           }
+        }
     }
 
 
