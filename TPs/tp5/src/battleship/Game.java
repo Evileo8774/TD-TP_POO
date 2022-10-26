@@ -21,6 +21,7 @@ public class Game {
             Answer res = sea.shoot(p);
             System.out.println(res);
         }
+        System.out.println("Bravo !");
     }
 
     private Position inputPosition(){
@@ -34,12 +35,11 @@ public class Game {
     private Position toPosition(String coord){
         char[] lettres = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'};
         int y = 0;
-        int x = Integer.parseInt(coord.substring(1,1));
+        int x = Integer.parseInt(coord.substring(1,2))-1;
 
         for(int i = 0; i < lettres.length; i++){
-            if(coord.substring(0,1).charAt(0) == lettres[i]) y = i+1;
+            if(coord.substring(0,1).charAt(0) == lettres[i]) y = i;
         }
-
         return new Position(x, y);
     }
 

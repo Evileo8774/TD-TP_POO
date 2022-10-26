@@ -39,14 +39,16 @@ public class Cell {
      * @return the result of the shot
      */
     public Answer shot(){
-        shot = true;
         if(hasBeenShot() || ship == null){
+            shot = true;
             return Answer.MISS;
         } else {
             ship.beenHitting();
             if(ship.hasBeenSunk()){
+                shot = true;
                 return Answer.SUNK;
             } else {
+                shot = true;
                 return Answer.HIT;
             }
         }
