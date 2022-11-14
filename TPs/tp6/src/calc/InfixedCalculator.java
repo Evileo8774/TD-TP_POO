@@ -8,7 +8,7 @@ public class InfixedCalculator implements Calculator{
     private int currentValue;
     private Operator operator;
 
-    private boolean newValue = false;
+    private boolean newValue;
 
     @Override
     public int getCurrentValue() {
@@ -59,7 +59,11 @@ public class InfixedCalculator implements Calculator{
 
     @Override
     public void pressEquals() {
-        currentValue = (operator.compute(this.previousValue, this.currentValue));
+        if(this.newValue == true) {
+            currentValue = (operator.compute(this.previousValue, this.currentValue));
+        }
+        this.previousValue = 0;
+        this.newValue = false;
     }
 
     @Override
@@ -71,6 +75,7 @@ public class InfixedCalculator implements Calculator{
     public void pressClear() {
         currentValue = 0;
         previousValue = 0;
+        this.newValue = false;
     }
 
     @Override
