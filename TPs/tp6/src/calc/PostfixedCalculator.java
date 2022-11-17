@@ -1,35 +1,40 @@
 package calc;
 
 import calc.operator.*;
+import java.util.Stack;
 
-public class InfixedCalculator implements Calculator{
+public class PostfixedCalculator implements Calculator{
 
-    private int previousValue;
-    private int currentValue;
+    private Stack<Integer> s;
     private Operator operator;
 
-    private boolean newValue;
+    public PostfixedCalculator(){
+        this.s = new Stack<>();
+        pressClear();
+    }
 
     @Override
     public int getCurrentValue() {
-        return currentValue;
+        return s.peek();
     }
 
     @Override
     public void pressDigit(int digit) {
-        if(currentValue == 0){
-            currentValue = digit;
+        if(s.peek() == 0){
+            s.push(s.pop() + digit);
         } else {
-            currentValue *= 10;
-            currentValue += digit;
+            s.push(s.pop() * 10 + digit);
         }
     }
 
     public void pressOperator(Operator op){
-        previousValue = currentValue;
-        currentValue = 0;
-        this.newValue = true;
-        this.operator = op;
+        if(s.size() > 1){
+            try{
+                s.push(op.compute(s.pop(), s.pop()));
+            } catch(ArithmeticException e){
+                pressClear();
+            }
+        }
     }
 
     @Override
@@ -54,28 +59,18 @@ public class InfixedCalculator implements Calculator{
 
     @Override
     public void pressEquals() {
-        if(this.newValue == true) {
-            try{
-                currentValue = (operator.compute(this.previousValue, this.currentValue));
-            } catch(ArithmeticException e){
-                pressClear();
-            }
-
-        }
-        this.previousValue = 0;
-        this.newValue = false;
+        s.push(0);
     }
 
     @Override
     public void pressDel() {
-        currentValue /= 10;
+        s.push(s.pop()/10);
     }
 
     @Override
     public void pressClear() {
-        currentValue = 0;
-        previousValue = 0;
-        this.newValue = false;
+        s.clear();
+        s.push(0);
     }
 
     @Override
