@@ -27,6 +27,12 @@ public class PostfixedCalculator implements Calculator{
         }
     }
 
+    /** Calcule la dernière valeur du Stack avec celle d'avant
+    *
+    * @params op l'opérateur que l'on souhaite utiliser
+    *
+    */
+
     public void pressOperator(Operator op){
         if(s.size() > 1){
             try{
@@ -37,7 +43,7 @@ public class PostfixedCalculator implements Calculator{
         }
     }
 
-    @Override
+
     public void pressPlus() {
         pressOperator(new Addition());
     }
